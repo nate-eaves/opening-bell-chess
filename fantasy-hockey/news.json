@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T02:19:36.432633Z",
+  "generated_at": "2026-10-27T02:22:55.959911Z",
   "sources": [
     {
       "name": "Daily Faceoff",
@@ -8,8 +8,9 @@
     },
     {
       "name": "RotoWire",
-      "ok": true,
-      "items": 0
+      "ok": false,
+      "items": 0,
+      "error": "No RSS entries returned"
     },
     {
       "name": "r/fantasyhockey",
