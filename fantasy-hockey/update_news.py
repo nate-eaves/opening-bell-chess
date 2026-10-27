@@ -41,7 +41,7 @@ for name, url in FEEDS:
         entries = [node for node in root.iter() if tag_name(node.tag) in ("item", "entry")]
         added = 0
         for entry in entries[:15]:
-            title = re.sub(r"\s+, " ", child_text(entry, {"title"})).strip()
+            title = re.sub(r"\s+", " ", child_text(entry, {"title"})).strip()
             link = child_text(entry, {"link", "guid"})
             if not title or not link.startswith(("https://", "http://")):
                 continue
