@@ -48,7 +48,7 @@ for name, url in FEEDS:
             published = iso_date(child_text(entry, {"pubdate", "published", "updated", "date"}))
             items.append({"source": name, "title": title[:300], "url": link, "published": published})
             added += 1
-        statuses.append({"name": name, "ok": True, "items": added})
+        statuses.append({"name": name, "ok": added > 0, "items": added, **({"error": "No RSS entries returned"} if added == 0 else {})})
     except Exception as exc:
         statuses.append({"name": name, "ok": False, "error": type(exc).__name__})
 items.sort(key=lambda item: item["published"], reverse=True)
